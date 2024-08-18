@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Winner Wines</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Collegamento alla favicon -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E4E2DD; /* Colore di sfondo dello stesso colore del logo */
+            color: #702626; /* Colore del testo basato sul colore della scritta del logo */
+            transition: background-color 0.3s ease; /* Transizione per il colore di sfondo */
+        }
+        .navbar {
+             background-color: #E4E2DD;
+             padding: 10px 20px;
+             display: flex;
+             justify-content: center;
+             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+             position: fixed; /* Navbar fissa */
+             top: 0;
+             width: 100%;
+             z-index: 1000; /* Assicurarsi che la navbar sia sopra gli altri elementi */
+         }
+
+         /* Per evitare che il contenuto venga coperto dalla navbar, aggiungi un padding-top al body */
+         body {
+             padding-top: 60px; /* Altezza approssimativa della navbar */
+         }
+
+        .navbar a {
+            color: #702626;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        nav a.active {
+            text-decoration: underline;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .logo-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .logo-container img.logo-large {
+            max-width: 300px; /* Dimensione del logo grande */
+            height: auto;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease-out; /* Animazione di fade-in */
+        }
+        .footer .instagram-icon {
+            margin-top: 20px;
+        }
+        .footer .instagram-icon a {
+            color: #E4E2DD;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .footer .instagram-icon a:hover {
+            color: #000000; /* Colore hover dell'icona di Instagram */
+        }
+        footer {
+            background-color: #702626; /* Colore dello sfondo del footer */
+            color: #E4E2DD; /* Colore del testo nel footer */
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+            animation: slideIn 1s ease-out; /* Animazione di slide-in */
+        }
+        .contact-container {
+            margin: 100px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            color: #702626;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #702626;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #702626;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #8a3333;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+  <div class="navbar">
+  <nav>
+      <a href="index.html">Home</a>
+      <a href="prodotti.html">Vini</a>
+      <a href="contatti.html" class="active">Contatti</a>
+      <a href="chisiamo.html">Chi Siamo</a>
+      <a href="prodotticollab.html">Produttori</a>
+  </nav>
+  </div>
+
+<div class="logo-container">
+    <img src="logo.png" alt="Logo Winner Wines" class="logo-large"> <!-- Logo grande -->
+</div>
+
+<div class="container">
+    <h1>Contatti</h1>
+    <p>Per contattarci, puoi utilizzare i seguenti dettagli:</p>
+    <p>Telefono: +39 030 5054499</p>
+    <p>Email: winnerwines@libero.it</p>
+</div>
+
+<div class="contact-container">
+    <h2>Contattaci</h2>
+    <form action="processa_contatti.php" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Messaggio:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Invia</button>
+    </form>
+</div>
+
+
+
+<footer class="footer">
+    <p><strong>Contatti:</strong></p>
+    <p>Telefono: +39 030 5054499</p>
+    <p>Email: winnerwines@libero.it</p>
+    <div class="instagram-icon">
+        <a href="https://www.instagram.com/winnerwines" target="_blank"> <!-- Link al profilo Instagram -->
+            <i class="fab fa-instagram"></i> <!-- Icona di Instagram (usando Font Awesome) -->
+        </a>
+        <p>&copy; 2024 Winner Wines. Tutti i diritti riservati.</p>
+    </div>
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</body>
+</html>

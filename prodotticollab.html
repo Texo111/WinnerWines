@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Nostri Brand di Vini</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E4E2DD;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+             background-color: #E4E2DD;
+             padding: 10px 20px;
+             display: flex;
+             justify-content: center;
+             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+             position: fixed; /* Navbar fissa */
+             top: 0;
+             width: 100%;
+             z-index: 1000; /* Assicurarsi che la navbar sia sopra gli altri elementi */
+         }
+
+         /* Per evitare che il contenuto venga coperto dalla navbar, aggiungi un padding-top al body */
+         body {
+             padding-top: 60px; /* Altezza approssimativa della navbar */
+         }
+
+        .navbar a {
+            color: #702626;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: #702626;
+            text-decoration: underline; /* Sottolinea al passaggio del mouse e nella pagina attiva */
+        }
+
+        h1 {
+            color: #702626;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        .brand-container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            transition: transform 0.3s ease;
+        }
+
+        .brand-container:hover {
+            transform: scale(1.02);
+        }
+
+        .brand-container img {
+            width: 70%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .brand-container .description {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .footer {
+            background-color: #702626;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .footer .instagram-icon {
+            margin-top: 20px;
+        }
+        .footer .instagram-icon a {
+            color: #E4E2DD;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .footer .instagram-icon a:hover {
+            color: #000000; /* Colore hover dell'icona di Instagram */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+  <div class="navbar">
+  <nav>
+      <a href="index.html">Home</a>
+      <a href="prodotti.html">Vini</a>
+      <a href="contatti.html">Contatti</a>
+      <a href="chisiamo.html">Chi Siamo</a>
+      <a href="prodotticollab.html" class="active">Produttori</a>
+  </nav>
+  </div>
+    <h1>I Nostri Brand di Vini</h1>
+
+    <div class="brand-grid">
+
+        <!-- Brand 1 Container -->
+        <div class="brand-container">
+            <img src="brand1.jpg" alt="Brand 1">
+            <div class="description">
+                <h3>Champagne Herbert Beaufort</h3>
+                <p>Comune di Bouzy Grand Cru della Montagne de Reims. Champagnes classici ed eleganti. Il Brut Carte d'Or (90% Pinot Nero - 10% Chardonnay) e al vertice la Cuvée Mélomane (Blanc de blancs) dal perlage fine e persistente.  </p>
+            </div>
+        </div>
+
+        <!-- Brand 2 Container -->
+        <div class="brand-container">
+            <img src="brand2.jpg" alt="Brand 2">
+            <div class="description">
+                <h3>Champagne varnier fanniere</h3>
+                <p>Comune di Avize classificato Grand Cru della Cote des Blancs (solo uve Chardonnay). Champagnes finissimi e di Gran classe. Da rimarcare il Brut classico Blanc de Blancs e la Cuvée Saint Denis (parcella di viti di 65 anni detta la vigna del nonno) caratterizzano da una spiccata mineralità.</p>
+            </div>
+        </div>
+
+        <!-- Brand 3 Container -->
+        <div class="brand-container">
+            <img src="brand3.jpg" alt="Brand 3">
+            <div class="description">
+                <h3>Champagne Jean-Yves de Carlini</h3>
+                <p>Comune di Verzenay classificato Grand Cru della Montagne de Reims. Champagne elaborati principalmente da uve Pinot Nero. Fra le gemme della cantina uno Champagne Rosé e la Cuvée Montgolfiere (100% Pinot Nero) di notevole struttura e persistenza.</p>
+            </div>
+        </div>
+
+        <!-- Brand 4 Container -->
+        <div class="brand-container">
+            <img src="brand4.jpg" alt="Brand 4">
+            <div class="description">
+                <h3>Champagne Bernard Bremont</h3>
+                <p>Comune di Ambounnay Grand Cru della Montagne de Reims. Champagnes finissimi e profumati. La produzione comprende un Brut da conoscitoci (80% Pinot Nero - 20% Chardonnay). Un Rosé carico di colore e dai profumi fruttati. Infine un millesimato in grado di esprimersi al meglio col passare del tempo. </p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p><strong>Contatti:</strong></p>
+        <p>Telefono: +39 030 5054499</p>
+        <p>Email: winnerwines@libero.it</p>
+        <div class="instagram-icon">
+            <a href="https://www.instagram.com/winnerwines" target="_blank"> <!-- Link al profilo Instagram -->
+                <i class="fab fa-instagram"></i> <!-- Icona di Instagram (usando Font Awesome) -->
+            </a>
+            <p>&copy; 2024 Winner Wines. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</body>
+</html>

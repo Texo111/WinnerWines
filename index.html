@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner Wines</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E4E2DD; /* Colore di sfondo */
+            color: #333; /* Colore del testo */
+        }
+        .navbar {
+             background-color: #E4E2DD;
+             padding: 10px 20px;
+             display: flex;
+             justify-content: center;
+             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+             position: fixed; /* Navbar fissa */
+             top: 0;
+             width: 100%;
+             z-index: 1000; /* Assicurarsi che la navbar sia sopra gli altri elementi */
+         }
+
+         /* Per evitare che il contenuto venga coperto dalla navbar, aggiungi un padding-top al body */
+         body {
+             padding-top: 60px; /* Altezza approssimativa della navbar */
+         }
+
+        .navbar a {
+            color: #702626;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: #702626;
+            text-decoration: underline; /* Sottolinea al passaggio del mouse e nella pagina attiva */
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        header img {
+            width: 500px; /* Dimensione del logo */
+        }
+        header h1 {
+            color: #702626;
+            margin: 10px 0;
+        }
+        .welcome {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .footer {
+            background-color: #702626; /* Colore di sfondo della sezione contatti */
+            color: #E4E2DD; /* Colore del testo nel footer */
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .footer p {
+            margin: 10px 0;
+        }
+        .footer .instagram-icon {
+            margin-top: 20px;
+        }
+        .footer .instagram-icon a {
+            color: #E4E2DD;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .footer .instagram-icon a:hover {
+            color: #000000; /* Colore hover dell'icona di Instagram */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+
+<nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="prodotti.html">Vini</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="chisiamo.html">Chi Siamo</a>
+    <a href="prodotticollab.html">Produttori</a>
+</nav>
+</div>
+<header>
+    <img src="logo.png" alt="Winner Wines Logo"> <!-- Aggiungi il tuo logo -->
+    <h1>Benvenuti su Winner Wines</h1>
+</header>
+
+<div class="container">
+    <p>
+        Winner Wines è il tuo riferimento per i migliori Champagne Grand Cru selezionati con cura da piccoli produttori indipendenti. Scopri la nostra collezione esclusiva di Champagne Blanc de Blancs, Blanc de Noirs, Rosé, e Millesimati, tutti prodotti in annate eccezionali per un'esperienza di gusto unica.
+    </p>
+</div>
+
+<footer class="footer">
+    <p><strong>Contatti:</strong></p>
+    <p>Telefono: +39 030 5054499</p>
+    <p>Email: winnerwines@libero.it</p>
+    <div class="instagram-icon">
+        <a href="https://www.instagram.com/winnerwines" target="_blank"> <!-- Link al profilo Instagram -->
+            <i class="fab fa-instagram"></i> <!-- Icona di Instagram (usando Font Awesome) -->
+        </a>
+        <p>&copy; 2024 Winner Wines. Tutti i diritti riservati.</p>
+    </div>
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</body>
+</html>

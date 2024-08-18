@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodotti - Winner Wines</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E4E2DD; /* Colore di sfondo */
+            color: #702626; /* Colore del testo */
+        }
+        .navbar {
+       background-color: #E4E2DD;
+       padding: 10px 20px;
+       display: flex;
+       justify-content: center;
+       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+       position: fixed; /* Navbar fissa */
+       top: 0;
+       width: 100%;
+       z-index: 1000; /* Assicurarsi che la navbar sia sopra gli altri elementi */
+   }
+
+   /* Per evitare che il contenuto venga coperto dalla navbar, aggiungi un padding-top al body */
+   body {
+       padding-top: 60px; /* Altezza approssimativa della navbar */
+   }
+
+ /* Per evitare che il contenuto venga coperto dalla navbar, aggiungi un padding-top al body */
+ body {
+     padding-top: 60px; /* Altezza approssimativa della navbar */
+ }
+        .navbar a {
+            color: #702626;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        nav a.active {
+            text-decoration: underline;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .logo-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .logo-container img.logo-large {
+            max-width: 300px;
+            height: auto;
+        }
+        .product {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .product:hover {
+            transform: scale(1.02);
+        }
+        .product img {
+            max-width: 200px;
+            border-radius: 5px;
+        }
+        .product-info {
+            margin-left: 20px;
+            max-width: 600px;
+        }
+        .product-info h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+        }
+        .product-info p {
+            margin: 5px 0;
+        }
+        .slider-container {
+            position: relative;
+            max-width: 200px;
+            overflow: hidden;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider img {
+            min-width: 100%;
+            transition: opacity 0.5s ease;
+        }
+        .slider-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .slider-nav button {
+            background-color: #702626;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .slider-nav button:hover {
+            background-color: #5c1e1e;
+        }
+        footer {
+            background-color: #702626;
+            color: #E4E2DD;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+        }
+        .footer .instagram-icon {
+            margin-top: 20px;
+        }
+        .footer .instagram-icon a {
+            color: #E4E2DD;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .footer .instagram-icon a:hover {
+            color: #000000; /* Colore hover dell'icona di Instagram */
+        }
+        @keyframes fadeInSlide {
+           0% {
+               opacity: 0;
+               transform: translateX(100px);
+           }
+           100% {
+               opacity: 1;
+               transform: translateX(0);
+           }
+       }
+
+
+    </style>
+</head>
+<body>
+
+  <div class="navbar">
+  <nav>
+      <a href="index.html">Home</a>
+      <a href="prodotti.html" class="active">Vini</a>
+      <a href="contatti.html">Contatti</a>
+      <a href="chisiamo.html">Chi Siamo</a>
+      <a href="prodotticollab.html">Produttori</a>
+  </nav>
+  </div>
+<div class="logo-container">
+    <img src="logo.png" alt="Logo Winner Wines" class="logo-large">
+</div>
+
+<div class="product">
+    <div class="slider-container">
+        <div class="slider" id="slider1">
+            <img src="brut_cuvee.jpg" alt="BRUT CUVEE DU MELOMANE GRAND CRU">
+            <img src="brut_cuvee_2.jpg" alt="BRUT CUVEE DU MELOMANE GRAND CRU 2">
+            <!-- Altre immagini possono essere aggiunte qui -->
+        </div>
+        <div class="slider-nav">
+            <button onclick="slidePrev(1)">&#10094;</button>
+            <button onclick="slideNext(1)">&#10095;</button>
+        </div>
+    </div>
+    <div class="product-info">
+        <h2>BRUT CUVEE DU MELOMANE GRAND CRU</h2>
+        <p><strong>Vitigno:</strong> 100% Chardonnay</p>
+        <p><strong>Cantina:</strong> Herbert Beaufort</p>
+        <p><strong>Gradi:</strong> 12&deg;</p>
+        <p><strong>Colore:</strong> Oro con leggeri riflessi verdognoli</p>
+        <p><strong>Affinamento:</strong> L'affinamento deve essere lungo e lento in modo da formare bollicine persistenti, numerose e dalla grana fine per un periodo di affinamento dai 18 mesi per i non millesimati e fino ai 33 dei millesimati</p>
+        <p><strong>Profumo:</strong> Al naso rivela subito una grande complessità, con note di mandorle fresche, brioche tostate, burro, agrumi e frutta secca</p>
+        <p><strong>Abbinamento:</strong> Aperitivi e piatti a base di pesce</p>
+        <p><strong>Descrizione:</strong> «Questo Puro Chardonnay Champagne possiede un colore giallo verdognolo (oro-verde), bollicine delicate, una spuma fine e persistente»</p>
+    </div>
+</div>
+
+<!-- Ripetere il blocco per ogni vino -->
+<!-- Esempio per BRUT ROSE’ GRAND CRU Bernard Bremont -->
+
+<div class="product">
+    <div class="slider-container">
+        <div class="slider" id="slider2">
+            <img src="brut_cuvee.jpg" alt="BRUT ROSE’ GRAND CRU Bernard Bremont">
+            <img src="brut_cuvee.jpg" alt="BRUT ROSE’ GRAND CRU Bernard Bremont 2">
+            <!-- Altre immagini possono essere aggiunte qui -->
+        </div>
+        <div class="slider-nav">
+            <button onclick="slidePrev(2)">&#10094;</button>
+            <button onclick="slideNext(2)">&#10095;</button>
+        </div>
+    </div>
+    <div class="product-info">
+        <h2>BRUT ROSE’ GRAND CRU Bernard Bremont</h2>
+        <p><strong>Vitigno:</strong> 80% Pinot Nero - 20% Chardonnay</p>
+        <p><strong>Cantina:</strong> Bernard Bremont</p>
+        <p><strong>Gradi:</strong> 12&deg;</p>
+        <p><strong>Colore:</strong> Rosa antico brillante, spuma persistente e perlage finissimo</p>
+        <p><strong>Affinamento:</strong> Vinificazione in bianco per il vitigno Pinot nero, per lo chardonnay maturazione in barrique</p>
+        <p><strong>Profumo:</strong> Al naso è ricco e complesso, note floreali e fruttate di frutta cotta e spezie</p>
+        <p><strong>Abbinamento:</strong> Più che delizioso per l’aperitivo. Indicato per gli abbinamenti tradizionali come le grigliate di pesce, le carni bianche anche speziate e da provare con qualche piatto esotico come l'anatra laccata o altri piatti della cucina orientale</p>
+        <p><strong>Descrizione:</strong> «Questo champagne regala una straordinaria eleganza , complesso, armonico, caldo, rotondo, fresco. Lungo e persistente nel finale»</p>
+    </div>
+</div>
+
+
+<div class="product">
+    <div class="slider-container">
+        <div class="slider" id="slider1">
+            <img src="brut_cuvee.jpg" alt="BRUT CUVEE DU MELOMANE GRAND CRU">
+            <img src="brut_cuvee_2.jpg" alt="BRUT CUVEE DU MELOMANE GRAND CRU 2">
+            <!-- Altre immagini possono essere aggiunte qui -->
+        </div>
+        <div class="slider-nav">
+            <button onclick="slidePrev(1)">&#10094;</button>
+            <button onclick="slideNext(1)">&#10095;</button>
+        </div>
+    </div>
+    <div class="product-info">
+        <h2>BRUT CART E OR TRADITION GRAND CRU</h2>
+        <p><strong>Vitigno:</strong> 80% Pinot Nero - 20% Chardonnay</p>
+        <p><strong>Cantina:</strong> Herbert Beaufort</p>
+        <p><strong>Gradi:</strong> 12&deg;</p>
+        <p><strong>Colore:</strong> Oro pallido con bollicine eleganti</p>
+        <p><strong>Affinamento:</strong> L'affinamento deve essere lungo e lento in modo da formare bollicine persistenti, numerose e dalla grana fine per un periodo di affinamento dai 18 mesi per i non millesimati e fino ai 33 dei millesimati</p>
+        <p><strong>Profumo:</strong> Al naso è fine, fruttato, floreale, note di burro e di lievito</p>
+        <p><strong>Abbinamento:</strong> Di perlage molto fine, è uno champagne che si accompagna bene a pasti ricchi</p>
+        <p><strong>Descrizione:</strong> «La prevalenza di pinot nero conferisce struttura a questo champagne»</p>
+    </div>
+</div>
+
+
+<div class="product">
+    <div class="slider-container">
+        <div class="slider" id="slider1">
+            <img src="brut_cuvee.jpg" alt="BRUT CUVEE DU MELOMANE GRAND CRU">
+            <img src="brut_cuvee_2.jpg" alt="BRUT CUVEE DU MELOMANE GRAND CRU 2">
+            <!-- Altre immagini possono essere aggiunte qui -->
+        </div>
+        <div class="slider-nav">
+            <button onclick="slidePrev(1)">&#10094;</button>
+            <button onclick="slideNext(1)">&#10095;</button>
+        </div>
+    </div>
+    <div class="product-info">
+        <h2>BRUT GRAND CRU Bernard Bremont</h2>
+        <p><strong>Vitigno:</strong> 80% Pinot Nero - 20% Chardonnay</p>
+        <p><strong>Cantina:</strong> Bernard Bremont</p>
+        <p><strong>Gradi:</strong> 12&deg;</p>
+        <p><strong>Colore:</strong> Alla vista si presenta di colore giallo paglierino brillante, spuma esuberante, perlage fine</p>
+        <p><strong>Affinamento:</strong> Vinificazione in bianco per il vitigno Pinot nero, per lo chardonnay maturazione in barrique</p>
+        <p><strong>Profumo:</strong> Al naso è delicato, fruttato, leggermente floreale, lievito</p>
+        <p><strong>Abbinamento:</strong> Perfetto come antipasto e con i primi, come molti champagne può essere usato anche a tutto pasto in una cena di pesce, ideale con i crostacei</p>
+        <p><strong>Descrizione:</strong> «Questo champagne di corpo lascia poco spazio allo Chardonnay e alla sua finezza. In bocca è caldo, delicato, fresco, abbastanza armonico. Lungo e persistente nel finale»</p>
+    </div>
+</div>
+
+
+<div class="product">
+    <div class="slider-container">
+        <div class="slider" id="slider1">
+            <img src="brut_cuvee.jpg" alt="BRUT CUVEE DU MELOMANE GRAND CRU">
+            <img src="brut_cuvee_2.jpg" alt="BRUT CUVEE DU MELOMANE GRAND CRU 2">
+            <!-- Altre immagini possono essere aggiunte qui -->
+        </div>
+        <div class="slider-nav">
+            <button onclick="slidePrev(1)">&#10094;</button>
+            <button onclick="slideNext(1)">&#10095;</button>
+        </div>
+    </div>
+    <div class="product-info">
+        <h2>CUVEE SAINT DENISE GRAND CRUE</h2>
+        <p><strong>Vitigno:</strong> 80% Chardonnay - 20% Pinot Nero </p>
+        <p><strong>Cantina:</strong> Varnier Fannière </p>
+        <p><strong>Gradi:</strong> 12&deg;</p>
+        <p><strong>Colore:</strong> Oro chiaro con sottili riflessi verdi, le bollicine sono fini e leggere</p>
+        <p><strong>Affinamento:</strong> Cinque anni di invecchiamento in cantina</p>
+        <p><strong>Profumo:</strong> Al naso offre un bouquet di aromi, fiori bianchi e frutta secca, tipica dei migliori Chardonnay</p>
+        <p><strong>Abbinamento:</strong> Ottimo come aperitivo o come accompagnamento al foie gras</p>
+        <p><strong>Descrizione:</strong> «La maturità di questo Gran Cru si esprime nelle note di nocciola al forno e pasticceria danese, con una finitura minerale pronunciata. Questo Champagne è il prodotto di uve di un unico vigneto in Avize, il "Clos du Grand Pére", dove la vita media dei vini è 65 anni. Un vino per intenditori»</p>
+    </div>
+</div>
+
+
+
+<div class="product">
+    <div class="slider-container">
+        <div class="slider" id="slider1">
+            <img src="brut_cuvee.jpg" alt="BRUT CUVEE DU MELOMANE GRAND CRU">
+            <img src="brut_cuvee_2.jpg" alt="BRUT CUVEE DU MELOMANE GRAND CRU 2">
+            <!-- Altre immagini possono essere aggiunte qui -->
+        </div>
+        <div class="slider-nav">
+            <button onclick="slidePrev(1)">&#10094;</button>
+            <button onclick="slideNext(1)">&#10095;</button>
+        </div>
+    </div>
+    <div class="product-info">
+        <h2>BRUT GRAND CRU BLANC DE BLANCS</h2>
+        <p><strong>Vitigno:</strong>100% Chardonnay</p>
+        <p><strong>Cantina:</strong> Varnier Fannière </p>
+        <p><strong>Gradi:</strong> 12&deg;</p>
+        <p><strong>Colore:</strong> Giallo paglierino con riflessi di giada</p>
+        <p><strong>Affinamento:</strong> La durata media del suo affinamento in bottiglia è di 3 anni</p>
+        <p><strong>Profumo:</strong> Al naso evidenza aromi di limone mescolato con note di frutta matura, albicocca e mela verde</p>
+        <p><strong>Abbinamento:</strong> Indicato per aperitivi e piatti a base di pesce</p>
+        <p><strong>Descrizione:</strong> «Questo Brut Grand Cru è un assemblaggio di vini provenienti da diversi anni. Sensazioni di finezza persistente , la presenza di Chardonnay regala equilibrio con un finale leggermente minerale»</p>
+    </div>
+</div>
+
+
+<div class="product">
+    <div class="slider-container">
+        <div class="slider" id="slider1">
+            <img src="brut_cuvee.jpg" alt="BRUT CUVEE DU MELOMANE GRAND CRU">
+            <img src="brut_cuvee_2.jpg" alt="BRUT CUVEE DU MELOMANE GRAND CRU 2">
+            <!-- Altre immagini possono essere aggiunte qui -->
+        </div>
+        <div class="slider-nav">
+            <button onclick="slidePrev(1)">&#10094;</button>
+            <button onclick="slideNext(1)">&#10095;</button>
+        </div>
+    </div>
+    <div class="product-info">
+        <h2>BRUT ROSE’ GRAND CRUE CARLINI’ </h2>
+        <p><strong>Vitigno:</strong>75% Pinot Nero - 25% Chardonnay </p>
+        <p><strong>Cantina:</strong> Jean-Yves de Carlini  </p>
+        <p><strong>Gradi:</strong> 12&deg;</p>
+        <p><strong>Colore:</strong> Rosè brillante, spuma persistente ed esuberante, perlage finissimo</p>
+        <p><strong>Affinamento:</strong> Vinificazione in bianco per i due vitigni neri e per lo chardonnay e maturazione in barrique</p>
+        <p><strong>Profumo:</strong> Al naso è ricco, ampio, fruttato, lieviti e spezie </p>
+        <p><strong>Abbinamento:</strong> Si abbina bene con i pesci più saporiti, salmone speziato e aragoste</p>
+        <p><strong>Descrizione:</strong> «Vino d'eccezione a tiratura limitata, fiore all'occhiello della produzione Jean-Yves De Carlini»</p>
+    </div>
+</div>
+<!-- Ripetere questo schema per gli altri vini -->
+
+<footer class="footer">
+    <p><strong>Contatti:</strong></p>
+    <p>Telefono: +39 030 5054499</p>
+    <p>Email: winnerwines@libero.it</p>
+    <div class="instagram-icon">
+        <a href="https://www.instagram.com/winnerwines" target="_blank"> <!-- Link al profilo Instagram -->
+            <i class="fab fa-instagram"></i> <!-- Icona di Instagram (usando Font Awesome) -->
+        </a>
+        <p>&copy; 2024 Winner Wines. Tutti i diritti riservati.</p>
+    </div>
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+<script>
+    let sliders = {};
+
+    function slideNext(sliderId) {
+        const slider = document.getElementById('slider' + sliderId);
+        const totalSlides = slider.children.length;
+        sliders[sliderId] = (sliders[sliderId] || 0) + 1;
+        if (sliders[sliderId] >= totalSlides) {
+            sliders[sliderId] = 0;
+        }
+        slider.style.transform = `translateX(-${sliders[sliderId] * 100}%)`;
+    }
+
+    function slidePrev(sliderId) {
+        const slider = document.getElementById('slider' + sliderId);
+        sliders[sliderId] = (sliders[sliderId]
